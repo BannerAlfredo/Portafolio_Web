@@ -1,0 +1,846 @@
+/*================ Tipografías ================*/
+@font-face {
+    font-family: "sakana";
+    src: url("../assets/fonts/Sakana.ttf");
+}
+@font-face {
+    font-family: "Acumin1";
+    src: url("../assets/fonts/Acumin-RPro.otf");
+}
+@font-face {
+    font-family: "Acumin2";
+    src: url("../assets/fonts/Acumin-BdPro.otf");
+}
+@font-face {
+    font-family: "Photograph";
+    src: url("../assets/fonts/Photograph\ Signature.ttf");
+}
+
+/*============ LOADER ============
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1750B3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: loaderFadeOut 0.8s ease forwards;
+    animation-delay: 2.4s; /* tiempo visible del logo 
+}
+
+.loader-logo {
+    width: 300px;
+    opacity: 0;
+    transform: scale(0.8);
+    filter: blur(10px);
+    animation: logoIn 1.8s ease forwards;
+}
+
+@keyframes logoIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+        filter: blur(10px);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes loaderFadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+*/
+
+/*================ Reset ================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Acumin2";
+    background-color: #ffffff;
+    color: #000000;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/shape-36.png);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;           /* 50% de opacidad */
+    z-index: -1;
+}
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*================ Header ================*/
+header {
+    width: 100%;
+    height: 266px;
+    background-image: url("../img/header.png");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+header section {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ffffff3d;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+header section div {
+    flex: 1;
+}
+
+/* Links */
+.link ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.link ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+.link ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* posición del borde */
+    width: 0%;
+    height: 2px;
+    background-color: #00A7E7; /* color de la línea */
+    transition: width .2s ease;
+}
+
+.link ul li a:hover::after {
+    width: 100%;
+}
+.Portafolio {
+    font-family: sakana;
+}
+
+
+/* Search */
+.search-box {
+    max-width: 500px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-box i {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.445);
+}
+
+.search-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+/* Redes */
+.redes ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.redes ul li a {
+    color: white;
+    font-size: 17px;
+    transition: color .3s ease; /* suavizado */
+}
+.redes ul li a:hover {
+    color: #21dbc4;
+}
+
+.header-welcome {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Texto con relleno que aparece como escritura */
+.firma-llenado {
+    font-family: "Photograph";
+    font-size: 70px;
+    color: #ffffff;  /* relleno blanco */
+    display: inline-block;
+    overflow: hidden;
+
+        -webkit-text-stroke: 0 transparent;
+    font-weight: normal;
+    text-shadow: none;
+    filter: none;
+    /* Ocultar texto desde la derecha */
+    clip-path: inset(0 100% 0 0);
+
+    animation: escribirRelleno 4s ease forwards;
+}
+
+/* Animación: revela el texto de izquierda a derecha */
+@keyframes escribirRelleno {
+    from {
+        clip-path: inset(0 100% 0 0);
+    }
+    to {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+
+/* Foto de portada */
+.foto-border {
+    width: 115px;
+    height: 115px;
+    background: linear-gradient(45deg, #001C66, #00A7E7, #58FBF9);
+    border-radius: 50%;
+    padding: 4px; /* grosor del borde degradado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    bottom: -50px;
+    left: 60px;
+}
+
+.foto {
+    width: 107px;
+    height: 107px;
+    background-image: url("../img/perfil.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+
+/*================ Cuerpo ================*/
+.acercacontainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 55px;
+    flex: 1;
+    margin-bottom: 15px; /* deja espacio para el footer fijo */
+}
+
+.sidebar {
+    width: 20%;
+    padding: 40px;
+    padding-top: 20px;
+    font-family: "Acumin1";
+    min-width: 260px;
+}
+
+.profile h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #001C66;
+}
+
+.detalle {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.detalle li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    gap: 8px;
+    color: #252525;
+}
+
+.detalle i {
+    font-size: 13px;
+    color: #707070;
+}
+
+.about h3 {
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-family: "Acumin2";
+    color: #0074D9;
+}
+
+.about p {
+    text-align: justify;
+    font-size: 13px;
+    line-height: 22px;
+    color: #252525;
+}
+
+/* Contenedor general */
+.stats-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.06);
+    font-family: "Acumin1", sans-serif;
+}
+
+/* Lista de estadísticas */
+.stats-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.stats-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-list li strong {
+    font-weight: 700;
+}
+
+/* Subtítulos */
+.subtitulo {
+    font-size:12px;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Redes sociales */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.social-item {
+    padding: 10px;
+    background: #f7f7f7;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #222;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.social-item:hover {
+    background: #e6e6e6;
+}
+
+/* Caja de Adobe */
+.adobe-box {
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.adobe-box h4 {
+    margin: 0 0 5px;
+    font-weight: bold;
+}
+
+.sub-mini {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Herramientas */
+.tool {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.tool.ps { background: #2c4fa0; }
+.tool.ai { background: #c97400; }
+.tool.pr { background: #2d2a84; }
+
+.member-date {
+    font-size: 12px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.content {
+    width: 80%;
+    padding: 25px 40px;
+    font-family: "Acumin1";
+}
+
+/*================ Tabs ================*/
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-size: 14px;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #707070;
+    padding-bottom: 8px;
+}
+
+.tabs a.active {
+    border-bottom: 2px solid #000;
+    color: #000;
+    font-weight: bold;
+}
+
+.linea {
+    margin-bottom: 25px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+/*================ PROYECTOS ================*/
+.proyectos h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* GRID 4×3 */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* CARD unificada */
+.card {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 0 15px;
+    font-family: "Acumin1";
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.card .overlay h4 {
+    font-size: 13px;
+    font-family: "Acumin2";
+}
+
+.card .overlay .stats {
+    display: flex;
+    gap: 15px;
+}
+
+.card .overlay a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.card .overlay a:hover {
+    text-decoration: underline;
+}
+
+.card .overlay .stats p {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card .overlay .stats i {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+/*================ Paginación =====================*/
+.paginacion {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 40px 0;
+    align-items: center;
+    font-family: 'Acumin2';
+}
+
+/* Botones base */
+/* Botones base */
+.paginacion a {
+    text-decoration: none;
+    padding: 10px 18px;
+    font-size: 13px;
+    color: #333;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
+}
+
+/* Hover suave */
+.paginacion a:hover {
+    background: #0074D9;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+
+.paginacion .pages {
+    display: flex;
+    gap: 10px;
+}
+
+/* Página activa */
+.paginacion .page.active {
+    background: #0074D9;
+    color: #fff;
+    border-color: #0074D9;
+    cursor: default;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 116, 217, 0.4);
+}
+
+/* Botones prev/next */
+.paginacion .prev,
+.paginacion .next {
+    font-weight: bold;
+}
+
+/* Animación suave entre clics */
+.paginacion a:active {
+    transform: scale(0.96);
+}
+
+/*================ Footer ================*/
+.footer {
+    width: 100%;
+    height: 33px;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(114, 114, 114, 0.38);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.info-footer {
+    width: 96%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.footer ul li {
+    border-right: 1px solid rgba(114, 114, 114, 0.38);
+    padding-right: 25px;
+}
+
+.footer ul li:last-child {
+    border-right: none;
+}
+
+.footer ul li a {
+    color: #707070;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.logo-footer img {
+    width: 50px;
+}
+
+/*================ Responsive ================*/
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+    .content {
+        width: 100%;
+    }
+}
+
+/* Móviles medianos */
+@media (max-width: 650px) {
+    header section {
+        flex-wrap: wrap;
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .foto {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -60px;
+    }
+
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/*================ Logros ================*/
+.logros h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* Ocultar secciones por defecto */
+main > section {
+  display: none; /* oculta todas las secciones dentro de main */
+}
+
+.seccion-activa {
+  display: block; /* solo la activa se muestra */
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+
+/* Animación suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cv {
+  position: relative;
+  justify-content: center;
+  padding-left: 20%;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.cv .cv-image {
+  position: relative; /* necesario para overlay */
+  max-width: 800px;   /* limita el tamaño */
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.cv .cv-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.cv .cv-image:hover img {
+  transform: scale(1.05); /* mismo efecto que proyectos */
+}
+
+.cv .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 0 15px;
+  font-family: "Acumin1";
+}
+
+.cv .cv-image:hover .overlay {
+  opacity: 1; /* aparece igual que en proyectos */
+}
+
+.cv .overlay h4 {
+  font-size: 13px;
+  font-family: "Acumin2";
+}
+
+.cv .overlay a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.cv .overlay a:hover {
+  text-decoration: underline;
+}
+
+.cv .overlay .stats p {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cv .overlay .stats i {
+  font-size: 13px;
+  color: #ffffff;
+}
+
+/*================ Modal ================*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal:target {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 60%;
+    text-align: center;
+    animation: zoomIn 0.3s ease;
+}
+
+.modal-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cerrar {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    border-radius: 50%;
+    padding: 4px 10px;
+}
+
+.cerrar:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,648 @@
+/*================ Tipografías ================*/
+@font-face {
+    font-family: "sakana";
+    src: url("../assets/fonts/Sakana.ttf");
+}
+@font-face {
+    font-family: "Acumin1";
+    src: url("../assets/fonts/Acumin-RPro.otf");
+}
+@font-face {
+    font-family: "Acumin2";
+    src: url("../assets/fonts/Acumin-BdPro.otf");
+}
+
+/*================ Reset ================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Acumin2";
+    background-color: #ffffff;
+    color: #000000;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*================ Header ================*/
+header {
+    width: 100%;
+    height: 266px;
+    background-image: url("../img/header.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+header section {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ffffff3d;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+header section div {
+    flex: 1;
+}
+
+/* Links */
+.link ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.link ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.Portafolio {
+    font-family: sakana;
+}
+
+.link ul li a:hover {
+    border-bottom: 2px solid #ffffff;
+}
+/* Search */
+.search-box {
+    max-width: 500px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.search-box .icon {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.search-box input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+/* Redes */
+.redes ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.redes ul li a {
+    color: white;
+    font-size: 17px;
+}
+
+/* Foto de portada */
+.foto {
+    width: 107px;
+    height: 107px;
+    background-image: url("../img/perfil.png");
+    background-size: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    position: absolute;
+    bottom: -50px;
+    left: 60px;
+}
+
+/*================ Cuerpo ================*/
+.acercacontainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 55px;
+    flex: 1;
+    margin-bottom: 15px; /* deja espacio para el footer fijo */
+}
+
+.sidebar {
+    width: 20%;
+    padding: 40px;
+    padding-top: 20px;
+    font-family: "Acumin1";
+    min-width: 260px;
+}
+
+.profile h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.detalle {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.detalle li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    display: flex;
+    gap: 8px;
+    color: #252525;
+}
+
+.detalle i {
+    font-size: 13px;
+    color: #707070;
+}
+
+.about h3 {
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-family: "Acumin2";
+}
+
+.about p {
+    text-align: justify;
+    font-size: 13px;
+    line-height: 22px;
+    color: #252525;
+}
+
+.content {
+    width: 80%;
+    padding: 25px 40px;
+    font-family: "Acumin1";
+}
+
+/*================ Tabs ================*/
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-size: 14px;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #707070;
+    padding-bottom: 8px;
+}
+
+.tabs a.active {
+    border-bottom: 2px solid #000;
+    color: #000;
+}
+
+.linea {
+    margin-bottom: 25px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+/*================ PROYECTOS ================*/
+.proyectos h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* GRID 4×3 */
+.grid-proyectos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #f5f5f5;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+/* PAGINACIÓN */
+/* ===================== PAGINACIÓN PROFESIONAL ===================== */
+
+.paginacion {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 40px 0;
+    align-items: center;
+    font-family: 'Acumin2';
+}
+
+/* Botones base */
+.paginacion a {
+    text-decoration: none;
+    padding: 10px 18px;
+    font-size: 13px;
+    color: #333;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.05);
+}
+
+/* Hover suave */
+.paginacion a:hover {
+    background: #0074D9;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+.paginacion .pages{
+    display: flex;
+    gap: 10px;
+}
+
+/* Página activa */
+.paginacion .page.active {
+    background: #0074D9;
+    color: #fff;
+    border-color: #0074D9;
+    cursor: default;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 116, 217, 0.4);
+}
+
+/* Botones prev/next */
+.paginacion .prev,
+.paginacion .next {
+    font-weight: bold;
+}
+
+/* Animación suave entre clics */
+.paginacion a:active {
+    transform: scale(0.96);
+}
+
+
+/*================ Footer ================*/
+.footer {
+    width: 100%;
+    height: 33px;
+    background-color: #ffffff;
+    border-top: 1px solid rgba(114, 114, 114, 0.38);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.info-footer {
+    width: 96%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.footer ul li {
+    border-right: 1px solid rgba(114, 114, 114, 0.38);
+    padding-right: 25px;
+}
+
+.footer ul li:last-child {
+    border-right: none;
+}
+
+.footer ul li a {
+    color: #707070;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.logo-footer img {
+    width: 50px;
+}
+
+/*================ Responsive ================*/
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+    .content {
+        width: 100%;
+    }
+}
+
+/* Móviles medianos */
+@media (max-width: 650px) {
+    header section {
+        flex-wrap: wrap;
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    .foto {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -60px;
+    }
+
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .grid-proyectos {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #f5f5f5;
+    cursor: pointer;
+}
+
+.card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 0 15px;
+    font-family: "Acumin1";
+}
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.card .overlay h4 {
+    font-size: 13px;
+    font-family: "Acumin2";
+}
+
+.card .overlay .stats {
+    display: flex;
+    gap: 15px;
+}
+.card .overlay a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.card .overlay a:hover{
+    text-decoration: underline;
+}
+.card .overlay .stats p {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.card .overlay .stats i {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+/*servicios */
+.servicios {
+    margin-top: 3rem;
+    padding: 2rem;
+}
+
+.servicios h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.servicio-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.servicio-imgs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.servicio-imgs img {
+    flex: 1;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.servicio-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.precio {
+    color: #e91e63;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.descripcion {
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.servicio-card ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 0.5rem 0 1rem;
+}
+
+.servicio-card ul li {
+    margin-bottom: 0.4rem;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+.servicio-card ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+
+.btn-servicio {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn-servicio:hover {
+    background-color: #0056b3;
+}
+
+
+/*================ Logros ================*/
+
+/* Ocultar logros por defecto */
+
+.logros h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #000;
+}
+/* Ocultar secciones por defecto */
+.proyectos, .logros {
+  display: none;
+}
+
+/* Mostrar solo la activa */
+.seccion-activa {
+  display: block;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo para el enlace activo */
+.tabs a.active {
+  font-weight: bold;
+  color: #000000;
+}
+/* Modal oculto por defecto */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cuando el modal es el objetivo del enlace */
+.modal:target {
+  display: flex;
+}
+
+/* Contenido del modal */
+.modal-content {
+  position: relative;   /* clave para que la X se ubique dentro */
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 60%;
+  text-align: center;
+  animation: zoomIn 0.3s ease;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Botón cerrar en esquina superior derecha de la imagen */
+.cerrar {
+  position: absolute;
+  top: 5px;   /* más pegado a la esquina */
+  right: 5px;
+  font-size: 28px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  padding: 4px 10px;
+}
+.cerrar:hover {
+  background: rgba(0,0,0,0.9);
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+section {
+  display: none;
+}
+.seccion-activa {
+  display: block;
+}
